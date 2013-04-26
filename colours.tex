@@ -1,0 +1,73 @@
+% a כתום  FD971F
+% e ורוד  F92672
+% i ירוקת A6E22E
+% o סגול  AE81FF
+% u תכלת  66D9EF
+% 
+% רקע 1B1D1E
+% יעד F8F8F2
+
+\documentclass[a5paper]{report}
+\usepackage{geometry}
+
+\newcommand{\delim}{\textcolor{.!50!black}{·}}
+
+\usepackage{color, xcolor}
+
+% Molokai
+\newcommand{\colMolokai}{
+	\definecolor{Acol}{HTML}{FD971F}
+	\definecolor{Ecol}{HTML}{F92672}
+	\definecolor{Icol}{HTML}{A6E22E}
+	\definecolor{Ocol}{HTML}{AE81FF}
+	\definecolor{Ucol}{HTML}{66D9EF}
+	\definecolor{Scol}{HTML}{E6DB74}
+	\definecolor{fg}{HTML}{F8F8F2}
+	\definecolor{bg}{HTML}{1B1D1E}
+	\color{fg}
+	\pagecolor{bg}
+}
+
+% Solarized
+\newcommand{\colSolarized}{
+	\definecolor{Acol}{HTML}{CB4B16} %orange
+	\definecolor{Ecol}{HTML}{B58900} %yellow
+	\definecolor{Icol}{HTML}{859900} %green
+	\definecolor{Ocol}{HTML}{6C71C4} %violet
+	\definecolor{Ucol}{HTML}{268BD2} %blue
+	\definecolor{Scol}{HTML}{839496}
+	\definecolor{fg}{HTML}{839496} %base00
+	%\definecolor{bg}{HTML}{002B36} %base03
+	\definecolor{bg}{HTML}{1B1D1E} %from Molokai
+	\color{fg}
+	\pagecolor{bg}
+}
+
+% Invisibone
+\newcommand{\colInvisibone}{
+	\definecolor{Acol}{HTML}{B58858} %YEL
+	\definecolor{Ecol}{HTML}{D370A3} %RED
+	\definecolor{Icol}{HTML}{6D9E3F} %GRN
+	\definecolor{Ocol}{HTML}{AC7BDE} %MAG
+	\definecolor{Ucol}{HTML}{6095C5} %BLU
+	\definecolor{Scol}{HTML}{A0A0A0} %FGD
+	  \definecolor{fg}{HTML}{A0A0A0} %FGD
+	  \definecolor{bg}{HTML}{232323} %BGD
+	\color{fg}
+	\pagecolor{bg}
+}
+
+
+\colMolokai
+
+
+\usepackage{fontspec}
+\usepackage[RTLdocument]{bidi}
+\setmainfont[Script=Hebrew]{Alef}
+
+\renewcommand{\a}[1]{\textcolor{Acol!\level!fg}{#1}}
+  \newcommand{\e}[1]{\textcolor{Ecol!\level!fg}{#1}}
+\renewcommand{\i}[1]{\textcolor{Icol!\level!fg}{#1}}
+\renewcommand{\o}[1]{\textcolor{Ocol!\level!fg}{#1}}
+\renewcommand{\u}[1]{\textcolor{Ucol!\level!fg}{#1}}
+  \newcommand{\s}[1]{\textcolor{Scol!\level!fg}{#1}}
