@@ -1,16 +1,10 @@
-% a כתום  FD971F
-% e ורוד  F92672
-% i ירוקת A6E22E
-% o סגול  AE81FF
-% u תכלת  66D9EF
-% 
-% רקע 1B1D1E
-% יעד F8F8F2
-
 \documentclass[a5paper]{report}
 \usepackage{geometry}
+\pagestyle{empty}
 
-\newcommand{\delim}{\textcolor{.!50!black}{·}}
+\setlength\parskip{\medskipamount}
+\setlength\parindent{0pt}
+\tolerance=99999
 
 \usepackage{color, xcolor}
 
@@ -22,8 +16,8 @@
 	\definecolor{Ocol}{HTML}{AE81FF}
 	\definecolor{Ucol}{HTML}{66D9EF}
 	\definecolor{Scol}{HTML}{E6DB74}
-	\definecolor{fg}{HTML}{F8F8F2}
-	\definecolor{bg}{HTML}{1B1D1E}
+	  \definecolor{fg}{HTML}{F8F8F2}
+	  \definecolor{bg}{HTML}{1B1D1E}
 	\color{fg}
 	\pagecolor{bg}
 }
@@ -36,9 +30,9 @@
 	\definecolor{Ocol}{HTML}{6C71C4} %violet
 	\definecolor{Ucol}{HTML}{268BD2} %blue
 	\definecolor{Scol}{HTML}{839496}
-	\definecolor{fg}{HTML}{839496} %base00
-	%\definecolor{bg}{HTML}{002B36} %base03
-	\definecolor{bg}{HTML}{1B1D1E} %from Molokai
+	  \definecolor{fg}{HTML}{839496} %base00
+	 %\definecolor{bg}{HTML}{002B36} %base03
+	  \definecolor{bg}{HTML}{1B1D1E} %from Molokai
 	\color{fg}
 	\pagecolor{bg}
 }
@@ -57,10 +51,6 @@
 	\pagecolor{bg}
 }
 
-
-\colMolokai
-
-
 \usepackage{fontspec}
 \usepackage[RTLdocument]{bidi}
 \setmainfont[Script=Hebrew]{Alef}
@@ -71,3 +61,9 @@
 \renewcommand{\o}[1]{\textcolor{Ocol!\level!fg}{#1}}
 \renewcommand{\u}[1]{\textcolor{Ucol!\level!fg}{#1}}
   \newcommand{\s}[1]{\textcolor{Scol!\level!fg}{#1}}
+
+% a כתום
+% e ורוד
+% i ירוקת
+% o סגול
+% u תכלת
