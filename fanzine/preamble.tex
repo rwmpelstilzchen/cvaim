@@ -5,6 +5,15 @@
 \setlength\parindent{0pt}
 \tolerance=99999
 
+
+\usepackage{environ}
+
+\usepackage{paralist, framed}
+\usepackage{bidimulticol}
+\columnsep 0.50cm
+\NewEnviron{twocol}{\begin{multicols}{2}\BODY\end{multicols}}
+\newcommand{\inputverse}[1]{\begin{twocol}\input{../texts/#1}\end{twocol}}
+
 \usepackage{url}
 \newcommand{\symbolglyph}[1]{{\fontspec{Symbola}#1}}
 \newcommand{\symbolglyphii}[1]{{\fontspec{DejaVu Sans}#1}}
@@ -186,17 +195,17 @@
 \usepackage[RTLdocument]{bidi}
 \setmainfont[Script=Hebrew]{Alef}
 
-\renewcommand{\a}[1]{\textcolor{Acol!\level!fg}{#1}}
-  \newcommand{\e}[1]{\textcolor{Ecol!\level!fg}{#1}}
-\renewcommand{\i}[1]{\textcolor{Icol!\level!fg}{#1}}
-\renewcommand{\o}[1]{\textcolor{Ocol!\level!fg}{#1}}
-\renewcommand{\u}[1]{\textcolor{Ucol!\level!fg}{#1}}
-  \newcommand{\s}[1]{\textcolor{Scol!\level!fg}{#1}}
+\renewcommand{\a}[1]{\textcolor{Acol!\level!fg}{{#1}}}
+  \newcommand{\e}[1]{\textcolor{Ecol!\level!fg}{{#1}}}
+\renewcommand{\i}[1]{\textcolor{Icol!\level!fg}{{#1}}}
+\renewcommand{\o}[1]{\textcolor{Ocol!\level!fg}{{#1}}}
+\renewcommand{\u}[1]{\textcolor{Ucol!\level!fg}{{#1}}}
+  \newcommand{\s}[1]{\textcolor{Scol!\level!fg}{{#1}}}
 \newcommand{\gnuva}{\symbolglyph{\a{∘}}}
 
 \newcommand{\hl}[1]{\textbf{#1}}
 
-\newcommand{\textheader}[3]{\newpage #1\\#2\\#3}
+\newcommand{\textheader}[3]{#1\\#2\\#3}
 
 % a כתום
 % e ורוד

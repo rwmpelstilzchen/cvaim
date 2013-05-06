@@ -2,7 +2,7 @@ function! Vocolourisationise()
 	" begin with lowercase (=one letter)
 	try
 		while 1==1
-			:normal /\C\(a\|e\|i\|o\|u\|s\)[א-ת]/
+			:normal /\C\(a\|e\|i\|o\|u\|x\)[א-ת]/
 			:normal i\
 			:normal la{
 			:normal la}
