@@ -1,12 +1,13 @@
 \documentclass[a5paper, 12pt]{report}
-\usepackage{geometry}
+\usepackage[margin=1cm]{geometry}
 
 \setlength\parskip{\medskipamount}
 \setlength\parindent{0pt}
 \tolerance=99999
 
 
-\usepackage{environ}
+\usepackage{environ, setspace}
+\setstretch{1.25}
 
 \usepackage{paralist, framed}
 \usepackage{bidimulticol}
@@ -27,7 +28,7 @@
 	\definecolor{Icol}{HTML}{A6E22E}
 	\definecolor{Ocol}{HTML}{AE81FF}
 	\definecolor{Ucol}{HTML}{66D9EF}
-	\definecolor{Scol}{HTML}{F8F8F2}
+	\definecolor{Xcol}{HTML}{F8F8F2}
 	  \definecolor{fg}{HTML}{F8F8F2}
 	  \definecolor{bg}{HTML}{1B1D1E}
 	\color{fg}
@@ -41,7 +42,7 @@
 	\definecolor{Icol}{HTML}{859900} %green
 	\definecolor{Ocol}{HTML}{6C71C4} %violet
 	\definecolor{Ucol}{HTML}{268BD2} %blue
-	\definecolor{Scol}{HTML}{839496}
+	\definecolor{Xcol}{HTML}{839496}
 	  \definecolor{fg}{HTML}{839496} %base00
 	 %\definecolor{bg}{HTML}{002B36} %base03
 	  \definecolor{bg}{HTML}{1B1D1E} %from Molokai
@@ -56,7 +57,7 @@
 	\definecolor{Icol}{HTML}{6D9E3F} %GRN
 	\definecolor{Ocol}{HTML}{AC7BDE} %MAG
 	\definecolor{Ucol}{HTML}{6095C5} %BLU
-	\definecolor{Scol}{HTML}{A0A0A0} %FGD
+	\definecolor{Xcol}{HTML}{A0A0A0} %FGD
 	  \definecolor{fg}{HTML}{A0A0A0} %FGD
 	  \definecolor{bg}{HTML}{232323} %BGD
 	\color{fg}
@@ -70,7 +71,7 @@
 	\definecolor{Icol}{HTML}{2F632A}
 	\definecolor{Ocol}{HTML}{596196}
 	\definecolor{Ucol}{HTML}{4D8B91}
-	\definecolor{Scol}{HTML}{181512}
+	\definecolor{Xcol}{HTML}{181512}
 	  \definecolor{fg}{HTML}{181512}
 	  \definecolor{bg}{HTML}{F0F0F0}
 	\color{fg}
@@ -84,7 +85,7 @@
 	\definecolor{Icol}{HTML}{43803D}
 	\definecolor{Ocol}{HTML}{7882BF}
 	\definecolor{Ucol}{HTML}{6AA9B0}
-	\definecolor{Scol}{HTML}{181512}
+	\definecolor{Xcol}{HTML}{181512}
 	  \definecolor{fg}{HTML}{181512}
 	  \definecolor{bg}{HTML}{F0F0F0}
 	\color{fg}
@@ -98,7 +99,7 @@
 	\definecolor{Icol}{HTML}{009900}
 	\definecolor{Ocol}{HTML}{855A76}
 	\definecolor{Ucol}{HTML}{3399FF}
-	\definecolor{Scol}{HTML}{000000}
+	\definecolor{Xcol}{HTML}{000000}
 		\definecolor{fg}{HTML}{000000}
 	  \definecolor{bg}{HTML}{FFFFFF}
 	\color{fg}
@@ -112,7 +113,7 @@
 	\definecolor{Icol}{HTML}{30BF30}
 	\definecolor{Ocol}{HTML}{7730BF}
 	\definecolor{Ucol}{HTML}{3077BF}
-	\definecolor{Scol}{HTML}{808080}
+	\definecolor{Xcol}{HTML}{808080}
 	  \definecolor{fg}{HTML}{808080}
 	  \definecolor{bg}{HTML}{FFFFFF}
 	\color{fg}
@@ -126,7 +127,7 @@
 	\definecolor{Icol}{HTML}{4F8020} %GRN
 	\definecolor{Ocol}{HTML}{4F2080} %MAG
 	\definecolor{Ucol}{HTML}{205280} %BLU
-	\definecolor{Scol}{HTML}{808080} %FGD
+	\definecolor{Xcol}{HTML}{808080} %FGD
 	  \definecolor{fg}{HTML}{808080} %FGD
 	  \definecolor{bg}{HTML}{FFFFFF} %BGD
 	\color{fg}
@@ -140,7 +141,7 @@
 	\definecolor{Icol}{HTML}{5EBF00} %GRN
 	\definecolor{Ocol}{HTML}{5E00BF} %MAG
 	\definecolor{Ucol}{HTML}{0064BF} %BLU
-	\definecolor{Scol}{HTML}{808080} %FGD
+	\definecolor{Xcol}{HTML}{808080} %FGD
 	  \definecolor{fg}{HTML}{808080} %FGD
 	  \definecolor{bg}{HTML}{FFFFFF} %BGD
 	\color{fg}
@@ -154,7 +155,7 @@
 	\definecolor{Icol}{HTML}{859900} %green
 	\definecolor{Ocol}{HTML}{6C71C4} %violet
 	\definecolor{Ucol}{HTML}{268BD2} %blue
-	\definecolor{Scol}{HTML}{839496}
+	\definecolor{Xcol}{HTML}{839496}
 	  \definecolor{fg}{HTML}{839496} %base00
 	 %\definecolor{bg}{HTML}{002B36} %base03
 	  \definecolor{bg}{HTML}{FDF6E3} 
@@ -169,7 +170,7 @@
 	\definecolor{Icol}{HTML}{FFED00}
 	\definecolor{Ocol}{HTML}{E40303}
 	\definecolor{Ucol}{HTML}{FF8C00}
-	\definecolor{Scol}{HTML}{808080}
+	\definecolor{Xcol}{HTML}{808080}
 	  \definecolor{fg}{HTML}{808080}
 	  \definecolor{bg}{HTML}{FFFFFF}
 	\color{fg}
@@ -183,24 +184,33 @@
 	\definecolor{Icol}{HTML}{008700}
 	\definecolor{Ocol}{HTML}{870087}
 	\definecolor{Ucol}{HTML}{005F87}
-	\definecolor{Scol}{HTML}{444444}
+	\definecolor{Xcol}{HTML}{444444}
 	  \definecolor{fg}{HTML}{444444}
 	  \definecolor{bg}{HTML}{FFFFFF}
 	\color{fg}
 	\pagecolor{bg}
 }
 
+\usepackage{ushort}
 
 \usepackage{fontspec}
 \usepackage[RTLdocument]{bidi}
 \setmainfont[Script=Hebrew]{Alef}
+\newcommand{\cherokee}[1]{{\fontspec{Aboriginal Sans}#1}}
 
-\renewcommand{\a}[1]{\textcolor{Acol!\level!fg}{{#1}}}
-  \newcommand{\e}[1]{\textcolor{Ecol!\level!fg}{{#1}}}
-\renewcommand{\i}[1]{\textcolor{Icol!\level!fg}{{#1}}}
-\renewcommand{\o}[1]{\textcolor{Ocol!\level!fg}{{#1}}}
-\renewcommand{\u}[1]{\textcolor{Ucol!\level!fg}{{#1}}}
-  \newcommand{\s}[1]{\textcolor{Scol!\level!fg}{{#1}}}
+\newcommand{\bunderline}[1]{\overline{#1\mkern-1mu}\mkern1mu}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\linkvowel}[2]{\textcolor{#1!\level!fg}%
+	{$\overbar{\mbox{#2\vphantom{\fontspec{Alef}ל}}}$}%
+}
+
+\renewcommand{\a}[1]{\linkvowel{Acol}{#1}}
+  \newcommand{\e}[1]{\linkvowel{Ecol}{#1}}
+\renewcommand{\i}[1]{\linkvowel{Icol}{#1}}
+\renewcommand{\o}[1]{\linkvowel{Ocol}{#1}}
+\renewcommand{\u}[1]{\linkvowel{Ucol}{#1}}
+  \newcommand{\x}[1]{\textcolor{Xcol!\level!fg}{${\smash{\mbox{#1}}}$}}
+  \newcommand{\X}[1]{\textcolor{Xcol!\level!fg}{{#1}}}
 \newcommand{\gnuva}{\symbolglyph{\a{∘}}}
 
 \newcommand{\hl}[1]{\textbf{#1}}
