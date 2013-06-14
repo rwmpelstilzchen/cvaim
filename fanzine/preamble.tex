@@ -13,7 +13,7 @@
 \usepackage{bidimulticol}
 \columnsep 0.50cm
 \NewEnviron{twocol}{\begin{multicols}{2}\BODY\end{multicols}}
-\newcommand{\inputverse}[1]{\begin{twocol}\input{../texts/#1}\end{twocol}}
+\newcommand{\inputverse}[1]{\begin{twocol}\input{texts/#1}\end{twocol}}
 
 \usepackage{url}
 \newcommand{\symbolglyph}[1]{{\fontspec{Symbola}#1}}
@@ -195,13 +195,13 @@
 
 \usepackage{fontspec}
 \usepackage[RTLdocument]{bidi}
-\setmainfont[Script=Hebrew]{Alef}
+\setmainfont[Script=Hebrew]{Rutz_OE Regular Pro}
 \newcommand{\cherokee}[1]{{\fontspec{Aboriginal Sans}#1}}
 
 \newcommand{\bunderline}[1]{\overline{#1\mkern-1mu}\mkern1mu}
 \newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 \newcommand{\linkvowel}[2]{\textcolor{#1!\level!fg}%
-	{$\overbar{\mbox{#2\vphantom{\fontspec{Alef}ל}}}$}%
+	{$\overbar{\mbox{#2\vphantom{\fontspec{Rutz_OE Regular Pro}ל}}}$}%
 }
 
 \renewcommand{\a}[1]{\linkvowel{Acol}{#1}}
@@ -215,7 +215,41 @@
 
 \newcommand{\hl}[1]{\textbf{#1}}
 
-\newcommand{\textheader}[3]{#1\\#2\\#3}
+\newcommand{\transsection}[4]{
+	\noindent
+	{\Large #1}
+	\\
+	{\large #3 \hfill מ#2: #4}
+	\vspace{0.1cm}
+	\hrule
+	\vspace{1cm}
+	\markright{#1}
+}
+
+\usepackage{etoolbox}
+
+% 1 כותרת
+% 2 מחברת
+% 3 מתרגמת
+% 4 מתוך כותר
+% 5 הוצאה
+% 6 מקום
+% 7 שנה
+\newcommand{\textheader}[7]{
+	\noindent
+	{\Large #1}
+	\\
+	{\normalsize #2\ifstrempty{#3}{}{; {\normalsize בתרגום #3}} \hfill \ifstrempty{#4}{}{\small מתוך #4 \footnotesize (#5, #6, #7)}}
+	\vspace{0.1cm}
+	\hrule
+	\vspace{1cm}
+}
+\usepackage{needspace}
+\renewcommand{\textsection}[1]{\needspace{8ex}{\large #1\vspace{0.1cm}\hrule\vspace{1ex}}}
+\newcommand{\textsubsection}[1]{\needspace{8ex}\underline{#1}}
+
+\newcommand{\rewriting}[1]{#1}
+\newcommand{\rewritingdelete}[1]{}
 
 % a כתום
 % e ורוד
