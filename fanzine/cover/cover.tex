@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[margin=-0.75cm, a4paper]{geometry}
+\usepackage{pdflscape}
+
+\usepackage{graphicx, xcolor}
+\usepackage{tikz}
+\usepackage{onimage}
+
+\input{../colourschemes}
+\newcommand{\Ca}[1]{\linkvowel{Acol}{#1}}
+\newcommand{\Ce}[1]{\linkvowel{Ecol}{#1}}
+\newcommand{\Ci}[1]{\linkvowel{Icol}{#1}}
+\newcommand{\Co}[1]{\linkvowel{Ocol}{#1}}
+\newcommand{\Cu}[1]{\linkvowel{Ucol}{#1}}
+\newcommand{\Cx}[1]{\textcolor{Xcol!\level!fg}{${\smash{\mbox{#1}}}$}}
+\newcommand{\CX}[1]{\textcolor{Xcol!\level!fg}{{#1}}}
+\newcommand{\gnuva}{\symbolglyph{\a{∘}}}
+\newcommand{\level}{100}
+\newcommand{\bunderline}[1]{\overline{#1\mkern-1mu}\mkern1mu}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\linkvowel}[2]{\textcolor{#1!\level!fg}%
+	{$\overbar{\mbox{#2\vphantom{\fontspec{Rutz_OE Regular Pro}ל}}}$}%
+}
+
+\usepackage[outline]{contour}
+
+
+\usepackage{fontspec}
+\usepackage[RTLdocument]{bidi}
+\setmainfont[Script=Hebrew,
+	AutoFakeSlant=-0.15,
+	BoldFont={Rutz_OE Bold Pro}]
+	{Rutz_OE Regular Pro}
+\setmainfont[Script=Hebrew]{Alef}
+
+\begin{document}
+\colInvisibonePrintSat
+\begin{landscape}
+	\begin{tikzonimage}[width=\linewidth]{cover-A4ed.png}
+		\node [fill=cyan!10!white, fill opacity=1.0,
+			align=center, text width=7.5cm, text opacity=0.75,
+			rounded corners=9pt, draw=black, inner sep=2.5ex, line width=3pt, opacity=0.75, draw opacity=0.5] at (0.25, 0.75) {
+			\fontsize{50}{15}\selectfont
+			\RL{\textbf{\Co{או}\Ci{ת}\Co{יו}\Cx{ת} \Ci{ב}\Cx{צ}\Ca{ב}\Ci{עי}\Cx{ם}}}
+			\contour{red}{123}
+		};
+	\end{tikzonimage}
+\end{landscape}
+\end{document}

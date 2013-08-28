@@ -1,5 +1,5 @@
-\documentclass[a5paper, 12pt]{report}
-\usepackage[margin=1cm]{geometry}
+\documentclass[12pt]{report}
+\usepackage[margin=1cm, a5paper]{geometry}
 
 \setlength\parskip{\medskipamount}
 \setlength\parindent{0pt}
@@ -21,187 +21,24 @@
 
 \usepackage{color, xcolor}
 
-% Molokai
-\newcommand{\colMolokai}{
-	\definecolor{Acol}{HTML}{FD971F}
-	\definecolor{Ecol}{HTML}{F92672}
-	\definecolor{Icol}{HTML}{A6E22E}
-	\definecolor{Ocol}{HTML}{AE81FF}
-	\definecolor{Ucol}{HTML}{66D9EF}
-	\definecolor{Xcol}{HTML}{F8F8F2}
-	  \definecolor{fg}{HTML}{F8F8F2}
-	  \definecolor{bg}{HTML}{1B1D1E}
-	\color{fg}
-	\pagecolor{bg}
-}
-
-% Solarized
-\newcommand{\colSolarized}{
-	\definecolor{Acol}{HTML}{CB4B16} %orange
-	\definecolor{Ecol}{HTML}{B58900} %yellow
-	\definecolor{Icol}{HTML}{859900} %green
-	\definecolor{Ocol}{HTML}{6C71C4} %violet
-	\definecolor{Ucol}{HTML}{268BD2} %blue
-	\definecolor{Xcol}{HTML}{839496}
-	  \definecolor{fg}{HTML}{839496} %base00
-	 %\definecolor{bg}{HTML}{002B36} %base03
-	  \definecolor{bg}{HTML}{1B1D1E} %from Molokai
-	\color{fg}
-	%\pagecolor{bg}
-}
-
-% Invisibone
-\newcommand{\colInvisibone}{
-	\definecolor{Acol}{HTML}{B58858} %YEL
-	\definecolor{Ecol}{HTML}{D370A3} %RED
-	\definecolor{Icol}{HTML}{6D9E3F} %GRN
-	\definecolor{Ocol}{HTML}{AC7BDE} %MAG
-	\definecolor{Ucol}{HTML}{6095C5} %BLU
-	\definecolor{Xcol}{HTML}{A0A0A0} %FGD
-	  \definecolor{fg}{HTML}{A0A0A0} %FGD
-	  \definecolor{bg}{HTML}{232323} %BGD
-	\color{fg}
-	\pagecolor{bg}
-}
-
-% X::Poppy!
-\newcommand{\colXpoppy}{
-	\definecolor{Acol}{HTML}{C79520}
-	\definecolor{Ecol}{HTML}{B06A86}
-	\definecolor{Icol}{HTML}{2F632A}
-	\definecolor{Ocol}{HTML}{596196}
-	\definecolor{Ucol}{HTML}{4D8B91}
-	\definecolor{Xcol}{HTML}{181512}
-	  \definecolor{fg}{HTML}{181512}
-	  \definecolor{bg}{HTML}{F0F0F0}
-	\color{fg}
-	\pagecolor{bg}
-}
-
-% X::Poppy! (brighter colours:)
-\newcommand{\colXpoppybright}{
-	\definecolor{Acol}{HTML}{DBAB3B}
-	\definecolor{Ecol}{HTML}{BF849C}
-	\definecolor{Icol}{HTML}{43803D}
-	\definecolor{Ocol}{HTML}{7882BF}
-	\definecolor{Ucol}{HTML}{6AA9B0}
-	\definecolor{Xcol}{HTML}{181512}
-	  \definecolor{fg}{HTML}{181512}
-	  \definecolor{bg}{HTML}{F0F0F0}
-	\color{fg}
-	\pagecolor{bg}
-}
-
-% fokus
-\newcommand{\colFokus}{
-	\definecolor{Acol}{HTML}{F59300}
-	\definecolor{Ecol}{HTML}{D63267}
-	\definecolor{Icol}{HTML}{009900}
-	\definecolor{Ocol}{HTML}{855A76}
-	\definecolor{Ucol}{HTML}{3399FF}
-	\definecolor{Xcol}{HTML}{000000}
-		\definecolor{fg}{HTML}{000000}
-	  \definecolor{bg}{HTML}{FFFFFF}
-	\color{fg}
-	\pagecolor{bg}
-}
-
-% HSV (X/75/75)
-\newcommand{\colHSV}{
-	\definecolor{Acol}{HTML}{BF7730}
-	\definecolor{Ecol}{HTML}{BF305A}
-	\definecolor{Icol}{HTML}{30BF30}
-	\definecolor{Ocol}{HTML}{7730BF}
-	\definecolor{Ucol}{HTML}{3077BF}
-	\definecolor{Xcol}{HTML}{808080}
-	  \definecolor{fg}{HTML}{808080}
-	  \definecolor{bg}{HTML}{FFFFFF}
-	\color{fg}
-	\pagecolor{bg}
-}
-
-% Invisibone
-\newcommand{\colInvisibonePrint}{
-	\definecolor{Acol}{HTML}{805120} %YEL
-	\definecolor{Ecol}{HTML}{802051} %RED
-	\definecolor{Icol}{HTML}{4F8020} %GRN
-	\definecolor{Ocol}{HTML}{4F2080} %MAG
-	\definecolor{Ucol}{HTML}{205280} %BLU
-	\definecolor{Xcol}{HTML}{808080} %FGD
-	  \definecolor{fg}{HTML}{808080} %FGD
-	  \definecolor{bg}{HTML}{FFFFFF} %BGD
-	\color{fg}
-	\pagecolor{bg}
-}
-
-% Invisibone
-\newcommand{\colInvisibonePrintSat}{
-	\definecolor{Acol}{HTML}{BF6200} %YEL
-	\definecolor{Ecol}{HTML}{BF0062} %RED
-	\definecolor{Icol}{HTML}{5EBF00} %GRN
-	\definecolor{Ocol}{HTML}{5E00BF} %MAG
-	\definecolor{Ucol}{HTML}{0064BF} %BLU
-	\definecolor{Xcol}{HTML}{808080} %FGD
-	  \definecolor{fg}{HTML}{808080} %FGD
-	  \definecolor{bg}{HTML}{FFFFFF} %BGD
-	\color{fg}
-	\pagecolor{bg}
-}
-
-% Solarized
-\newcommand{\colSolarizedPaper}{
-	\definecolor{Acol}{HTML}{CB4B16} %orange
-	\definecolor{Ecol}{HTML}{B58900} %yellow
-	\definecolor{Icol}{HTML}{859900} %green
-	\definecolor{Ocol}{HTML}{6C71C4} %violet
-	\definecolor{Ucol}{HTML}{268BD2} %blue
-	\definecolor{Xcol}{HTML}{839496}
-	  \definecolor{fg}{HTML}{839496} %base00
-	 %\definecolor{bg}{HTML}{002B36} %base03
-	  \definecolor{bg}{HTML}{FDF6E3} 
-	\color{fg}
-	\pagecolor{bg}
-}
-
-% Pride flag
-\newcommand{\colPride}{
-	\definecolor{Acol}{HTML}{004DFF}
-	\definecolor{Ecol}{HTML}{750787}
-	\definecolor{Icol}{HTML}{FFED00}
-	\definecolor{Ocol}{HTML}{E40303}
-	\definecolor{Ucol}{HTML}{FF8C00}
-	\definecolor{Xcol}{HTML}{808080}
-	  \definecolor{fg}{HTML}{808080}
-	  \definecolor{bg}{HTML}{FFFFFF}
-	\color{fg}
-	\pagecolor{bg}
-}
-
-% Lucius
-\newcommand{\colLucius}{
-	\definecolor{Acol}{HTML}{AF5F00}
-	\definecolor{Ecol}{HTML}{AF0000}
-	\definecolor{Icol}{HTML}{008700}
-	\definecolor{Ocol}{HTML}{870087}
-	\definecolor{Ucol}{HTML}{005F87}
-	\definecolor{Xcol}{HTML}{444444}
-	  \definecolor{fg}{HTML}{444444}
-	  \definecolor{bg}{HTML}{FFFFFF}
-	\color{fg}
-	\pagecolor{bg}
-}
+\input{colourschemes}
 
 \usepackage{ushort}
 
 \usepackage{fontspec}
 \usepackage[RTLdocument]{bidi}
-\setmainfont[Script=Hebrew]{Rutz_OE Regular Pro}
+\setmainfont[Script=Hebrew,
+	AutoFakeSlant=-0.15,
+	BoldFont={Rutz_OE Bold Pro}]
+	{Rutz_OE Regular Pro}
+\setmainfont[Script=Hebrew]{Alef}
 \newcommand{\cherokee}[1]{{\fontspec{Aboriginal Sans}#1}}
 
 \newcommand{\bunderline}[1]{\overline{#1\mkern-1mu}\mkern1mu}
 \newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 \newcommand{\linkvowel}[2]{\textcolor{#1!\level!fg}%
-	{$\overbar{\mbox{#2\vphantom{\fontspec{Rutz_OE Regular Pro}ל}}}$}%
+	%{$\overbar{\mbox{#2\vphantom{\fontspec{Rutz_OE Regular Pro}ל}}}$}%
+	{$\overbar{\mbox{#2\vphantom{\fontspec[Script=Hebrew]{Alef}ל}}}$}%
 }
 
 \renewcommand{\a}[1]{\linkvowel{Acol}{#1}}
@@ -251,8 +88,6 @@
 \newcommand{\rewriting}[1]{#1}
 \newcommand{\rewritingdelete}[1]{}
 
-% a כתום
-% e ורוד
-% i ירוקת
-% o סגול
-% u תכלת
+
+%\newcommand{\middlelinenormal}{{\vspace{-2em}\begin{center}\huge\fontspec{Bodoni Ornaments ITC TT}∂\end{center}}}
+\newcommand{\middlelinenormal}{\begin{center}*******\end{center}}
