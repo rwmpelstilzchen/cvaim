@@ -31,14 +31,15 @@
 	AutoFakeSlant=-0.15,
 	BoldFont={Rutz_OE Bold Pro}]
 	{Rutz_OE Regular Pro}
-\setmainfont[Script=Hebrew]{Alef}
+%\setmainfont[Script=Hebrew]{Alef}
 \newcommand{\cherokee}[1]{{\fontspec{Aboriginal Sans}#1}}
+\newcommand{\eg}[1]{{\fontspec{JSesh font}#1}}
 
 \newcommand{\bunderline}[1]{\overline{#1\mkern-1mu}\mkern1mu}
 \newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
 \newcommand{\linkvowel}[2]{\textcolor{#1!\level!fg}%
-	%{$\overbar{\mbox{#2\vphantom{\fontspec{Rutz_OE Regular Pro}ל}}}$}%
-	{$\overbar{\mbox{#2\vphantom{\fontspec[Script=Hebrew]{Alef}ל}}}$}%
+	{$\overbar{\mbox{#2\vphantom{\fontspec{Rutz_OE Regular Pro}לשׂ}}}$}%
+	%{$\overbar{\mbox{#2\vphantom{\fontspec[Script=Hebrew]{Alef}לשׂ}}}$}%
 }
 
 \renewcommand{\a}[1]{\linkvowel{Acol}{#1}}
@@ -49,8 +50,6 @@
   \newcommand{\x}[1]{\textcolor{Xcol!\level!fg}{${\smash{\mbox{#1}}}$}}
   \newcommand{\X}[1]{\textcolor{Xcol!\level!fg}{{#1}}}
 \newcommand{\gnuva}{\symbolglyph{\a{∘}}}
-
-\newcommand{\hl}[1]{\textbf{#1}}
 
 \newcommand{\transsection}[4]{
 	\noindent

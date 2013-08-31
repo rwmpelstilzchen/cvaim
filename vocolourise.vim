@@ -10,8 +10,14 @@ function! VokeyboardOn()
 	imap I I<left><left>
 	imap O O<left><left>
 	imap U U<left><left>
+	imap 3a \a<right>{<left><left><left>}
+	imap 3e \e<right>{<left><left><left>}
+	imap 3i \i<right>{<left><left><left>}
+	imap 3o \o<right>{<left><left><left>}
+	imap 3u \u<right>{<left><left><left>}
 	imap <space> <left>
-	map d laּ<esc>
+	imap d <left>ּ<right>
+	imap s <left>ׂ<right>
 endfunction
 
 function! VokeyboardOff()
@@ -26,8 +32,14 @@ function! VokeyboardOff()
 	imap I I
 	imap O O
 	imap U U
+	call 3a 3a
+	call 3e 3e
+	call 3i 3i
+	call 3o 3o
+	call 3u 3u
 	imap <space> <space>
-	map d d
+	imap d d
+	imap s s
 endfunction
 
 function! Vocolourise()
