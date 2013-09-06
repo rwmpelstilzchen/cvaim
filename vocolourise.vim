@@ -1,3 +1,7 @@
+noremap <F6> :call VokeyboardOn()<cr>
+noremap <F7> :call VokeyboardOff()<cr>
+noremap <F8> :call Vocolourise()<cr>
+
 function! VokeyboardOn()
 	imap a a<left>
 	imap e e<left>
@@ -18,6 +22,7 @@ function! VokeyboardOn()
 	imap <space> <left>
 	imap d <left>ּ<right>
 	imap s <left>ׂ<right>
+	imap <cr> <down><home>
 endfunction
 
 function! VokeyboardOff()
@@ -40,6 +45,7 @@ function! VokeyboardOff()
 	imap <space> <space>
 	imap d d
 	imap s s
+	imap <cr> <cr>
 endfunction
 
 function! Vocolourise()

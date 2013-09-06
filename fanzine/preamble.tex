@@ -3,7 +3,10 @@
 
 \setlength\parskip{\medskipamount}
 \setlength\parindent{0pt}
+\hyphenpenalty=5000
 \tolerance=99999
+\widowpenalty=1000
+\clubpenalty=1000
 
 
 \usepackage{environ, setspace}
@@ -15,18 +18,47 @@
 \NewEnviron{twocol}{\begin{multicols}{2}\BODY\end{multicols}}
 \newcommand{\inputverse}[1]{\begin{twocol}\input{texts/#1}\end{twocol}}
 
+	\NewEnviron{stanza}{\parbox{\linewidth}{\BODY\vspace{1ex}}}
+
+
 \usepackage{url}
 \newcommand{\symbolglyph}[1]{{\fontspec{Symbola}#1}}
 \newcommand{\symbolglyphii}[1]{{\fontspec{DejaVu Sans}#1}}
 
 \usepackage{color, xcolor}
-
 \input{colourschemes}
+
+\usepackage{xcolor}
+\usepackage{graphicx, wrapfig, floatflt}
+
+\newcommand{\tmuna}[3]{
+	\begin{wrapfigure}{L}{#2\textwidth}
+	%\begin{floatingfigure}[r]{#2\textwidth}
+		\vspace{-25pt}
+		\begin{center}
+			\setlength{\fboxsep}{0pt}
+			\setlength{\fboxrule}{1pt}
+			\leavevmode{\includegraphics[width=#2\textwidth]{texts/images/#1}}
+		\end{center}
+		\vspace{-1ex}
+		{\footnotesize\setstretch{1.0}#3}
+		%\vspace{-10pt}
+	\end{wrapfigure}
+	%\end{floatingfigure}
+}
 
 \usepackage{ushort}
 
 
 \usepackage{tikz}
+\newcommand{\uloosdot}[1]{%
+	\mbox{%
+    \tikz[baseline=(todotted.base)]{
+		\node[inner sep=0pt,outer sep=2pt] (todotted) {\RL{#1}};
+        \draw[densely dotted, thick] (todotted.south west) -- (todotted.south east);
+    }%
+}
+}%
 
 \usepackage{fontspec}
 \usepackage[RTLdocument]{bidi}
@@ -35,8 +67,9 @@
 	BoldFont={Rutz_OE Bold Pro}]
 	{Rutz_OE Regular Pro}
 %\setmainfont[Script=Hebrew]{Alef}
-\newcommand{\cherokee}[1]{{\fontspec{Aboriginal Sans}#1}}
-\newcommand{\eg}[1]{{\fontspec{JSesh font}#1}}
+\renewcommand{\L}[1]{\LR{\fontspec{Vesper Pro}#1}}
+\newcommand{\cherokee}[1]{\LR{\fontspec{Aboriginal Sans}#1}}
+\newcommand{\eg}[1]{\LR{\fontspec{JSesh font}#1}}
 
 \newcommand{\bunderline}[1]{\overline{#1\mkern-1mu}\mkern1mu}
 \newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
@@ -53,17 +86,7 @@
   \newcommand{\x}[1]{\textcolor{Xcol!\level!fg}{${\smash{\mbox{#1}}}$}}
   \newcommand{\X}[1]{\textcolor{Xcol!\level!fg}{{#1}}}
 \newcommand{\gnuva}{\symbolglyph{\a{∘}}}
-
-\newcommand{\transsection}[4]{
-	\noindent
-	{\Large #1}
-	\\
-	{\large #3 \hfill מ#2: #4}
-	\vspace{0.1cm}
-	\hrule
-	\vspace{1cm}
-	\markright{#1}
-}
+\newcommand{\gnuvah}{\textcolor{Acol!\level!fg}{$\overbar{\mbox{\textcolor{Xcol!\level!fg}{ח}\vphantom{\fontspec{Rutz_OE Regular Pro}לשׂ}}}$}}
 
 \usepackage{etoolbox}
 
@@ -76,16 +99,21 @@
 % 7 שנה
 \newcommand{\textheader}[7]{
 	\noindent
-	{\Large #1}
+	\needspace{8\baselineskip}
+	{\large #1}
 	\\
-	{\normalsize #2\ifstrempty{#3}{}{; {\normalsize בתרגום #3}} \hfill \ifstrempty{#4}{}{\small מתוך #4 \footnotesize (#5, #6, #7)}}
+	{\normalsize #2\ifstrempty{#3}{}{; {\normalsize \e{ב}\i{ת}\x{ר}\u{גו}\x{ם} #3}} \hfill \ifstrempty{#4}{}{\footnotesize \i{מ}\o{תו}\x{ך} „#4”} \footnotesize \ifstrempty{#4}{}{\scriptsize(}#5\ifstrempty{#6}{}{, }#6\ifstrempty{#7}{}{\ifstrempty{#6}{}{, }}#7\ifstrempty{#4}{}{)}}
 	\vspace{0.1cm}
 	\hrule
 	\vspace{1cm}
 }
 \usepackage{needspace}
-\renewcommand{\textsection}[1]{\needspace{8ex}{\large #1\vspace{0.1cm}\hrule\vspace{1ex}}}
-\newcommand{\textsubsection}[1]{\needspace{8ex}\underline{#1}}
+\usepackage{ulem}
+%\renewcommand{\textsection}[1]{\needspace{8ex}{\large #1\vspace{0.1cm}\hrule\vspace{1ex}}}
+\renewcommand{\textsection}[1]{\needspace{8ex}{\uloosdot{\textbf{#1}}}}
+\newcommand{\textsubsection}[1]{\needspace{8ex}{#1}}
+
+\newcommand{\addtext}[1]{\input{texts/#1.tex}\label{#1}}
 
 \newcommand{\rewriting}[1]{#1}
 \newcommand{\rewritingdelete}[1]{}
@@ -94,3 +122,4 @@
 %\newcommand{\middlelinenormal}{{\vspace{-2em}\begin{center}\huge\fontspec{Bodoni Ornaments ITC TT}∂\end{center}}}
 \newcommand{\middlelinenormal}{\begin{center}*******\end{center}}
 
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
