@@ -18,7 +18,8 @@
 \NewEnviron{twocol}{\begin{multicols}{2}\BODY\end{multicols}}
 \newcommand{\inputverse}[1]{\begin{twocol}\input{texts/#1}\end{twocol}}
 
-	\NewEnviron{stanza}{\parbox{\linewidth}{\BODY\vspace{1ex}}}
+%\NewEnviron{stanza}{\parbox{\linewidth}{\BODY\vspace{1ex}}}
+\NewEnviron{stanza}{{\BODY\vspace{1ex}}}
 
 
 \usepackage{url}
@@ -33,6 +34,7 @@
 
 \newcommand{\tmuna}[3]{
 	\begin{wrapfigure}{L}{#2\textwidth}
+	\setstretch{1.0}
 	%\begin{floatingfigure}[r]{#2\textwidth}
 		\vspace{-25pt}
 		\begin{center}
@@ -41,7 +43,7 @@
 			\leavevmode{\includegraphics[width=#2\textwidth]{texts/images/#1}}
 		\end{center}
 		\vspace{-1ex}
-		{\footnotesize\setstretch{1.0}#3}
+		{\footnotesize#3}
 		%\vspace{-10pt}
 	\end{wrapfigure}
 	%\end{floatingfigure}
