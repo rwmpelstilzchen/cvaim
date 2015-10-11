@@ -1,18 +1,19 @@
 \documentclass[12pt]{report}
-\usepackage[margin=1cm, a5paper]{geometry}
+\usepackage[margin=1cm, bottom=2cm, a5paper]{geometry}
 
 \setlength\parskip{\medskipamount}
 \setlength\parindent{0pt}
-\hyphenpenalty=5000
+%\hyphenpenalty=5000
+%\tolerance=99999
 \tolerance=99999
-\widowpenalty=1000
-\clubpenalty=1000
+%\widowpenalty=1000
+%\clubpenalty=1000
 
 
 \usepackage{environ, setspace}
 \setstretch{1.25}
 
-\usepackage{paralist, framed}
+\usepackage{paralist, framed, pbox, array, tabulary}
 \usepackage{bidimulticol}
 \columnsep 0.50cm
 \NewEnviron{twocol}{\begin{multicols}{2}\BODY\end{multicols}}
@@ -32,19 +33,19 @@
 \usepackage{xcolor}
 \usepackage{graphicx, wrapfig, floatflt}
 
-\newcommand{\tmuna}[3]{
+\newcommand{\tmuna}[4]{
 	\begin{wrapfigure}{L}{#2\textwidth}
-	\setstretch{1.0}
-	%\begin{floatingfigure}[r]{#2\textwidth}
+		\setstretch{1.0}
+		%\begin{floatingfigure}[r]{#2\textwidth}
 		\vspace{-25pt}
 		\begin{center}
 			\setlength{\fboxsep}{0pt}
-			\setlength{\fboxrule}{1pt}
-			\leavevmode{\includegraphics[width=#2\textwidth]{texts/images/#1}}
+			\setlength{\fboxrule}{#3}
+			\leavevmode{\fbox{\includegraphics[width=#2\textwidth]{texts/images/#1}}}
 		\end{center}
 		\vspace{-1ex}
-		{\footnotesize#3}
-		%\vspace{-10pt}
+		{\footnotesize#4}
+		\vspace{-10pt}
 	\end{wrapfigure}
 	%\end{floatingfigure}
 }
@@ -68,7 +69,8 @@
 	AutoFakeSlant=-0.15,
 	BoldFont={Rutz_OE Bold Pro}]
 	{Rutz_OE Regular Pro}
-%\setmainfont[Script=Hebrew]{Alef}
+%\setmonofont[Scale=0.9]{Monaco}
+\setmonofont[Scale=0.9]{PragmataPro}
 \renewcommand{\L}[1]{\LR{\fontspec{Vesper Pro}#1}}
 \newcommand{\cherokee}[1]{\LR{\fontspec{Aboriginal Sans}#1}}
 \newcommand{\eg}[1]{\LR{\fontspec{JSesh font}#1}}
@@ -86,9 +88,21 @@
 \renewcommand{\o}[1]{\linkvowel{Ocol}{#1}}
 \renewcommand{\u}[1]{\linkvowel{Ucol}{#1}}
   \newcommand{\x}[1]{\textcolor{Xcol!\level!fg}{${\smash{\mbox{#1}}}$}}
-  \newcommand{\X}[1]{\textcolor{Xcol!\level!fg}{{#1}}}
-\newcommand{\gnuva}{\symbolglyph{\a{∘}}}
+  %\newcommand{\X}[1]{\textcolor{Xcol!\level!fg}{{#1}}}
 \newcommand{\gnuvah}{\textcolor{Acol!\level!fg}{$\overbar{\mbox{\textcolor{Xcol!\level!fg}{ח}\vphantom{\fontspec{Rutz_OE Regular Pro}לשׂ}}}$}}
+
+% USE FOR B/W VERSION
+%\renewcommand{\a}[1]{#1}
+%\renewcommand{\e}[1]{#1}
+%\renewcommand{\i}[1]{#1}
+%\renewcommand{\o}[1]{#1}
+%\renewcommand{\u}[1]{#1}
+%\renewcommand{\x}[1]{#1}
+%\renewcommand{\gnuvah}{ח}
+%\makeatletter
+%\catcode`\ּ=\active
+%\def ּ{}
+%\makeatother
 
 \usepackage{etoolbox}
 
@@ -101,7 +115,7 @@
 % 7 שנה
 \newcommand{\textheader}[7]{
 	\noindent
-	\needspace{8\baselineskip}
+	\needspace{10\baselineskip}
 	{\large #1}
 	\\
 	{\normalsize #2\ifstrempty{#3}{}{; {\normalsize \e{ב}\i{ת}\x{ר}\u{גו}\x{ם} #3}} \hfill \ifstrempty{#4}{}{\footnotesize \i{מ}\o{תו}\x{ך} „#4”} \footnotesize \ifstrempty{#4}{}{\scriptsize(}#5\ifstrempty{#6}{}{, }#6\ifstrempty{#7}{}{\ifstrempty{#6}{}{, }}#7\ifstrempty{#4}{}{)}}
@@ -110,18 +124,21 @@
 	\vspace{1cm}
 }
 \usepackage{needspace}
+\usepackage{calc}
 \usepackage{ulem}
 %\renewcommand{\textsection}[1]{\needspace{8ex}{\large #1\vspace{0.1cm}\hrule\vspace{1ex}}}
-\renewcommand{\textsection}[1]{\needspace{8ex}{\uloosdot{\textbf{#1}}}}
+\renewcommand{\textsection}[1]{\vspace{1ex}\needspace{8\baselineskip}{\uloosdot{\textbf{#1}}}}
 \newcommand{\textsubsection}[1]{\needspace{8ex}{#1}}
 
-\newcommand{\addtext}[1]{\input{texts/#1.tex}\label{#1}}
+\newcommand{\hl}[1]{\textbf{#1}}
+
+\newcommand{\addtext}[1]{\label{#1}\input{texts/#1.tex}}
 
 \newcommand{\rewriting}[1]{#1}
 \newcommand{\rewritingdelete}[1]{}
 
 
-%\newcommand{\middlelinenormal}{{\vspace{-2em}\begin{center}\huge\fontspec{Bodoni Ornaments ITC TT}∂\end{center}}}
-\newcommand{\middlelinenormal}{\begin{center}*******\end{center}}
+\newcommand{\middlelinenormal}{{\vspace{-2em}\begin{center}\huge\fontspec{Bodoni Ornaments ITC TT}\end{center}}}
+%\newcommand{\middlelinenormal}{\begin{center}*******\end{center}}
 
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}

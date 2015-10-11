@@ -8,11 +8,25 @@
 	%\colItten
 	\def\multicolisrtl{1}
 
+	\pagestyle{empty}
+
+
 	\include{edition}
 
-	\input{prologue}
+	\include{prologue}
 
-	\input{contents}
+	\include{contents}
+
+	~\newpage
+
+	\pagestyle{plain}
+	\setcounter{page}{1}
 
 	\include{texts}
+
+	\pagestyle{empty}
+
+	~\newpage
+	~\newpage
+
 \end{document}
